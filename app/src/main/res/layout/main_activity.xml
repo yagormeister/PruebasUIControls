@@ -1,19 +1,29 @@
-ui controls
-    https://data-flair.training/blogs/android-ui-controls/
-
 <?xml version="1.0" encoding="utf-8"?>
+<!--ui controls-->
+<!--    https://data-flair.training/blogs/android-ui-controls/-->
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#A4B8DF">
 
-    <EditText
-        android:background="@color/white"
-        android:id="@+id/nombre"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Esto es una prueba"
+        app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="25dp"/>
+
+    <EditText
+
+        android:background="@color/white"
+        android:id="@+id/nombre"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:hint="Nombre"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -23,14 +33,15 @@ ui controls
     <EditText
         android:background="@color/white"
         android:id="@+id/contraseña"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:hint="Contraseña"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nombre"
         app:layout_constraintVertical_bias="0.05"
+
         />
     
     <Button
@@ -44,6 +55,54 @@ ui controls
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prueba tu identidad"
+        app:layout_constraintBottom_toTopOf="@id/image_button"
+        app:layout_constraintStart_toStartOf="@id/image_button"
+        app:layout_constraintEnd_toEndOf="@id/image_button"
+        android:textStyle="italic"
+        />
+
+    <ImageButton
+        android:contentDescription="Esto es una prueba de identidad"
+        android:tag="@string/app_name"
+        android:id="@+id/image_button"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:autofillHints="Quieres aproar??"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="?android:attr/fingerprintAuthDrawable"
+        app:layout_constraintHorizontal_bias=".1"
+        android:layout_margin="20dp"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quieres aprobar?"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@id/toggle_button"
+        app:layout_constraintEnd_toEndOf="@id/toggle_button"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/toggle_button" />
+
+    <ToggleButton
+        android:id="@+id/toggle_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".9"
+        android:textOff="Suspender"
+        android:textOn="Aprobar"
+        android:layout_margin="20dp"
         />
 
 
