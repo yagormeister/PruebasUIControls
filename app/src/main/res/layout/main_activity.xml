@@ -1,91 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--ui controls-->
 <!--    https://data-flair.training/blogs/android-ui-controls/-->
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="#A4B8DF">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Esto es una prueba"
+        android:layout_margin="25dp"
+        android:text="@string/esto_es_una_prueba"
         app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="25dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
 
-        android:background="@color/white"
         android:id="@+id/nombre"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:hint="Nombre"
+        android:background="@color/white"
+        android:hint="@string/nombre"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintVertical_bias="0.15"
+        android:autofillHints=""
+        android:inputType="text" />
+
     <EditText
-        android:background="@color/white"
         android:id="@+id/contraseña"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:hint="Contraseña"
+        android:background="@color/white"
+        android:hint="@string/contrase_a"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nombre"
         app:layout_constraintVertical_bias="0.05"
 
-        />
-    
+        android:autofillHints="pon tu pass nene"
+        android:inputType="text" />
+
     <Button
-        android:background="#C1C1C1"
         android:id="@+id/inicio_de_sesion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Inicio sesion"
-        app:layout_constraintTop_toBottomOf="@id/contraseña"
         android:layout_margin="40dp"
-
+        android:background="#C1C1C1"
+        android:text="@string/inicio_sesion"
         app:layout_constraintLeft_toLeftOf="parent"
+
         app:layout_constraintRight_toRightOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@id/contraseña" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Prueba tu identidad"
-        app:layout_constraintBottom_toTopOf="@id/image_button"
-        app:layout_constraintStart_toStartOf="@id/image_button"
-        app:layout_constraintEnd_toEndOf="@id/image_button"
+        android:text="@string/prueba_tu_identidad"
         android:textStyle="italic"
-        />
+        app:layout_constraintBottom_toTopOf="@id/image_button"
+        app:layout_constraintEnd_toEndOf="@id/image_button"
+        app:layout_constraintStart_toStartOf="@id/image_button" />
 
     <ImageButton
-        android:contentDescription="Esto es una prueba de identidad"
-        android:tag="@string/app_name"
         android:id="@+id/image_button"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:autofillHints="Quieres aproar??"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:src="?android:attr/fingerprintAuthDrawable"
-        app:layout_constraintHorizontal_bias=".1"
         android:layout_margin="20dp"
+        android:autofillHints="Quieres aproar??"
+        android:contentDescription="@string/esto_es_una_prueba_de_identidad"
+        android:src="?android:attr/fingerprintAuthDrawable"
+        android:tag="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".1"
+        app:layout_constraintStart_toStartOf="parent"
 
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quieres aprobar?"
+        android:text="@string/quieres_aprobar"
         android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@id/toggle_button"
         app:layout_constraintEnd_toEndOf="@id/toggle_button"
@@ -96,13 +98,85 @@
         android:id="@+id/toggle_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textOff="@string/suspender"
+        android:textOn="@string/aprobar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".9"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="224dp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guia">
+
+        <RadioButton
+            android:id="@+id/boton_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_10" />
+
+        <RadioButton
+            android:id="@+id/radio_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_5" />
+
+        <RadioButton
+            android:id="@+id/radio_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_0" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        android:text="@string/que_nota_quieres"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guia" />
+    <ProgressBar
+        android:id="@+id/barra_progreso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guia"
+        app:layout_constraintTop_toTopOf="@id/inicio_de_sesion"
+        />
+    <TextView
+        android:background="@color/white"
+        android:id="@+id/respuesta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias=".9"
-        android:textOff="Suspender"
-        android:textOn="Aprobar"
-        android:layout_margin="20dp"
+
+        /><TextView
+        android:background="@color/white"
+        android:id="@+id/respuesta1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/respuesta"
+        app:layout_constraintEnd_toEndOf="parent"
+
         />
 
 

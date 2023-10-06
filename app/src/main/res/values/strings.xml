@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">PruebasUIControls</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="esto_es_una_prueba">Esto es una prueba</string>
+    <string name="nombre">Nombre</string>
+    <string name="inicio_sesion">Inicio sesion</string>
+    <string name="prueba_tu_identidad">Prueba tu identidad</string>
+    <string name="esto_es_una_prueba_de_identidad">Esto es una prueba de identidad</string>
+    <string name="quieres_aprobar">Quieres aprobar?</string>
+    <string name="aprobar">Aprobar</string>
+    <string name="suspender">Suspender</string>
+    <string name="_10">10</string>
+    <string name="_5">5</string>
+    <string name="_0">0</string>
+    <string name="que_nota_quieres">Que nota quieres?</string>
 </resources>
